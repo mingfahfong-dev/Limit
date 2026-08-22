@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipping Product Quality Targets · FY27</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #14171b;
+    --panel: #1c2127;
+    --panel-2: #232a32;
+    --line: #2b323b;
+    --line-soft: #262c34;
+    --amber: #e8871e;
+    --amber-dim: rgba(232,135,30,0.16);
+    --rust: #b6532e;
+    --steel: #6fa2bd;
+    --text: #eeeae2;
+    --text-mid: #a9aeb6;
+    --text-dim: #6b7280;
+    --ok: #7bab6e;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:
+      radial-gradient(1200px 500px at 15% -10%, rgba(232,135,30,0.06), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    min-height:100vh;
+    padding:28px 18px 60px;
+  }
+  .wrap{max-width:920px;margin:0 auto;}
+
+  header{margin-bottom:26px;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin-bottom:8px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:7px;height:7px;
+    background:var(--amber);
+    display:inline-block;
+    border-radius:1px;
+    transform:rotate(45deg);
+  }
+  h1{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:clamp(24px,4vw,32px);
+    margin:0 0 8px;
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    color:var(--text-mid);
+    font-size:13.5px;
+    line-height:1.5;
+  }
+  .sub b{color:var(--text-mid);font-weight:600;}
+
+  .selector{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:16px;
+    margin-bottom:22px;
+  }
+  .grp-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.12em;
+    color:var(--text-dim);
+    margin-bottom:9px;
+    text-transform:uppercase;
+  }
+  .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
+  .chip-row:last-child{margin-bottom:0;}
+  .chip{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.02em;
+    background:var(--panel-2);
+    border:1px solid var(--line);
+    color:var(--text-mid);
+    padding:9px 15px;
+    border-radius:9px;
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .chip:hover{border-color:#3a424c;color:var(--text);}
+  .chip.active{
+    background:var(--amber-dim);
+    border-color:var(--amber);
+    color:var(--amber);
+  }
+
+  .readout-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:16px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--line);
+  }
+  .product-code{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    font-size:26px;
+    color:var(--text);
+  }
+  .product-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--steel);
+    background:rgba(111,162,189,0.12);
+    border:1px solid rgba(111,162,189,0.3);
+    padding:3px 9px;
+    border-radius:6px;
+    margin-left:10px;
+    letter-spacing:0.04em;
+  }
+  .note-flag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    color:var(--rust);
+    background:rgba(182,83,46,0.12);
+    border:1px solid rgba(182,83,46,0.35);
+    padding:5px 10px;
+    border-radius:7px;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:12px;
+  }
+
+  .card{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 16px 14px;
+  }
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:14px;
+  }
+  .param-name{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:600;
+    font-size:14.5px;
+    color:var(--text);
+  }
+  .param-unit{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--text-dim);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+  .target-val{
+    font-family:'JetBrains Mono',monospace;
+    font-weight:700;
+    font-size:20px;
+    color:var(--amber);
+    text-align:right;
+  }
+  .sd-val{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--text-dim);
+    text-align:right;
+    margin-top:2px;
+  }
+
+  .gauge{position:relative;height:34px;margin-top:6px;}
+  .gauge-track{
+    position:absolute;
+    top:14px;left:0;right:0;height:5px;
+    background:var(--line-soft);
+    border-radius:3px;
+  }
+  .gauge-band{
+    position:absolute;
+    top:14px;height:5px;
+    background:linear-gradient(90deg, rgba(123,171,110,0.55), rgba(123,171,110,0.55));
+    border-radius:3px;
+  }
+  .gauge-target{
+    position:absolute;
+    top:8px;width:2px;height:17px;
+    background:var(--amber);
+    box-shadow:0 0 8px rgba(232,135,30,0.6);
+  }
+  .gauge-target::after{
+    content:"";
+    position:absolute;
+    top:-4px;left:50%;
+    transform:translateX(-50%);
+    width:0;height:0;
+    border-left:4px solid transparent;
+    border-right:4px solid transparent;
+    border-top:5px solid var(--amber);
+  }
+  .gauge-tick{
+    position:absolute;
+    top:22px;
+    transform:translateX(-50%);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;
+    color:var(--text-dim);
+    white-space:nowrap;
+  }
+  .gauge-tick.lo{color:var(--text-mid);}
+  .gauge-tick.hi{color:var(--text-mid);}
+
+  .flat-val{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:var(--panel-2);
+    border:1px dashed var(--line);
+    border-radius:8px;
+    padding:9px 12px;
+    margin-top:6px;
+  }
+  .flat-val span{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--text-dim);
+  }
+
+  footer{
+    margin-top:24px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;
+    color:var(--text-dim);
+    text-align:center;
+    line-height:1.6;
+  }
+
+  @media (max-width:480px){
+    .grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">BHP · Shipping Product Quality</div>
+    <h1>Shipping Target Lookup</h1>
+    <div class="sub">
+      Iron Ore Product Quality Targets &amp; Internal Non-Conformance Limits — <b>FY27</b>,
+      effective 01/07/2026 to 30/06/2027. Select a product to view its spec band:
+      lower limit, shipping target, and upper limit for each parameter.
+      <b>LOI</b> is published as a target only (no spec limit); <b>H2O</b> carries the limit band.
+    </div>
+  </header>
+
+  <div class="selector">
+    <div class="grp-label">Fines</div>
+    <div class="chip-row" id="fines-row"></div>
+    <div class="grp-label">Lump</div>
+    <div class="chip-row" id="lump-row"></div>
+  </div>
+
+  <div class="readout-head">
+    <div>
+      <span class="product-code" id="hd-code"></span>
+      <span class="product-tag" id="hd-tag"></span>
+    </div>
+    <div id="hd-note"></div>
+  </div>
+
+  <div class="grid" id="gauge-grid"></div>
+
+  <footer>
+    Values as published 01/07/2026 · Queries → Product Quality team
+  </footer>
+</div>
+
+<script>
+const DATA = {
+  YNDF: { type:"Fines",
+    params:{
+      FE:{lower:55.75,target:56.50,upper:57.25,unit:"%"},
+      P:{lower:0.049,target:0.055,upper:0.061,unit:"%"},
+      SIO2:{lower:5.70,target:6.30,upper:6.90,unit:"%"},
+      AL2O3:{lower:1.65,target:1.95,upper:2.25,unit:"%"},
+      LOI:{target:10.70,unit:"%"},
+      H2O:{lower:8.40,target:10.50,upper:11.55,unit:"%"},
+      UNDERSIZE:{upper:10.00,target:8.00,unit:"%"},
+      OVERSIZE:{upper:16.00,target:12.00,unit:"%"}
+    },
+    sd:{FE:0.25,P:0.002,SIO2:0.20,AL2O3:0.10,LOI:0.35}
+  },
+  JMBF: { type:"Fines",
+    params:{
+      FE:{lower:59.28,target:60.30,upper:61.32,unit:"%"},
+      P:{lower:0.101,target:0.125,upper:0.149,unit:"%"},
+      SIO2:{lower:4.15,target:4.90,upper:5.65,unit:"%"},
+      AL2O3:{lower:3.05,target:3.50,upper:3.95,unit:"%"},
+      LOI:{target:4.90,unit:"%"},
+      H2O:{lower:5.70,target:7.80,upper:8.85,unit:"%"},
+      UNDERSIZE:{upper:30.00,target:28.00,unit:"%"},
+      OVERSIZE:{upper:16.00,target:12.00,unit:"%"}
+    },
+    sd:{FE:0.34,P:0.008,SIO2:0.25,AL2O3:0.15,LOI:0.35}
+  },
+  MACF: { type:"Fines", note:"Market constraint: min Fe 60%",
+    params:{
+      FE:{lower:60.00,target:60.50,upper:61.28,unit:"%"},
+      P:{lower:0.065,target:0.080,upper:0.095,unit:"%"},
+      SIO2:{lower:4.10,target:4.85,upper:5.60,unit:"%"},
+      AL2O3:{lower:2.15,target:2.45,upper:2.75,unit:"%"},
+      LOI:{target:5.95,unit:"%"},
+      H2O:{lower:6.65,target:8.75,upper:9.80,unit:"%"},
+      UNDERSIZE:{upper:28.00,target:26.00,unit:"%"},
+      OVERSIZE:{upper:18.00,target:13.00,unit:"%"}
+    },
+    sd:{FE:0.26,P:0.005,SIO2:0.25,AL2O3:0.10,LOI:0.35}
+  },
+  NHGF: { type:"Fines",
+    params:{
+      FE:{lower:59.71,target:60.70,upper:61.69,unit:"%"},
+      P:{lower:0.089,target:0.110,upper:0.131,unit:"%"},
+      SIO2:{lower:4.25,target:5.00,upper:5.75,unit:"%"},
+      AL2O3:{lower:2.50,target:2.80,upper:3.10,unit:"%"},
+      LOI:{target:4.70,unit:"%"},
+      H2O:{lower:6.70,target:8.80,upper:9.85,unit:"%"},
+      UNDERSIZE:{upper:30.00,target:27.00,unit:"%"},
+      OVERSIZE:{upper:18.00,target:14.00,unit:"%"}
+    },
+    sd:{FE:0.33,P:0.007,SIO2:0.25,AL2O3:0.10,LOI:0.35}
+  },
+  YLGF: { type:"Fines",
+    params:{
+      FE:{lower:53.95,target:55.00,upper:56.05,unit:"%"},
+      P:{lower:0.043,target:0.055,upper:0.067,unit:"%"},
+      SIO2:{lower:7.50,target:8.25,upper:9.00,unit:"%"},
+      AL2O3:{lower:2.35,target:2.80,upper:3.25,unit:"%"},
+      LOI:{target:10.00,unit:"%"},
+      H2O:{lower:7.40,target:9.50,upper:10.55,unit:"%"},
+      UNDERSIZE:{upper:10.00,target:8.00,unit:"%"},
+      OVERSIZE:{upper:16.00,target:12.00,unit:"%"}
+    }
+  },
+  JIMF: { type:"Fines",
+    params:{
+      FE:{lower:58.00,target:59.05,upper:60.10,unit:"%"},
+      P:{lower:0.089,target:0.110,upper:0.131,unit:"%"},
+      SIO2:{lower:5.05,target:5.80,upper:6.55,unit:"%"},
+      AL2O3:{lower:2.15,target:3.05,upper:3.95,unit:"%"},
+      LOI:{target:6.20,unit:"%"},
+      H2O:{lower:6.65,target:8.75,upper:9.80,unit:"%"},
+      UNDERSIZE:{upper:30.00,target:28.00,unit:"%"},
+      OVERSIZE:{upper:18.00,target:14.00,unit:"%"}
+    }
+  },
+  NBLL: { type:"Lump",
+    params:{
+      FE:{lower:60.96,target:61.95,upper:62.94,unit:"%"},
+      P:{lower:0.075,target:0.090,upper:0.105,unit:"%"},
+      SIO2:{lower:3.45,target:4.20,upper:4.95,unit:"%"},
+      AL2O3:{lower:1.30,target:1.60,upper:1.90,unit:"%"},
+      LOI:{target:5.20,unit:"%"},
+      H2O:{lower:2.30,target:4.10,upper:5.00,unit:"%"},
+      UNDERSIZE:{upper:7.00,target:6.00,unit:"%"},
+      OVERSIZE:{upper:25.00,target:20.00,unit:"%"}
+    },
+    sd:{FE:0.33,P:0.005,SIO2:0.25,AL2O3:0.10,LOI:0.30}
+  },
+  NBLLU: { type:"Lump",
+    params:{
+      FE:{lower:60.60,target:61.65,upper:62.70,unit:"%"},
+      P:{lower:0.075,target:0.090,upper:0.105,unit:"%"},
+      SIO2:{lower:3.55,target:4.30,upper:5.05,unit:"%"},
+      AL2O3:{lower:1.55,target:1.85,upper:2.15,unit:"%"},
+      LOI:{target:5.30,unit:"%"},
+      H2O:{lower:2.50,target:4.30,upper:5.20,unit:"%"},
+      UNDERSIZE:{upper:25.00,target:15.00,unit:"%"},
+      OVERSIZE:{upper:25.00,target:20.00,unit:"%"}
+    },
+    sd:{FE:0.33,P:0.005,SIO2:0.25,AL2O3:0.10,LOI:0.30}
+  }
+};
+
+const LABELS = {FE:"Fe",P:"P",SIO2:"SiO₂",AL2O3:"Al₂O₃",LOI:"LOI",H2O:"H₂O",UNDERSIZE:"Undersize",OVERSIZE:"Oversize"};
+const ORDER = ["FE","P","SIO2","AL2O3","LOI","H2O","UNDERSIZE","OVERSIZE"];
+
+const finesRow = document.getElementById('fines-row');
+const lumpRow = document.getElementById('lump-row');
+
+Object.keys(DATA).forEach(code=>{
+  const chip = document.createElement('div');
+  chip.className='chip';
+  chip.textContent=code;
+  chip.dataset.code=code;
+  chip.addEventListener('click',()=>render(code));
+  (DATA[code].type==="Fines"?finesRow:lumpRow).appendChild(chip);
+});
+
+function fmt(v, decimals){
+  if(v===undefined||v===null) return "—";
+  return v.toFixed(decimals);
+}
+function decimalsFor(key){
+  if(key==="P") return 3;
+  return 2;
+}
+
+function render(code){
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c.dataset.code===code));
+
+  const d = DATA[code];
+  document.getElementById('hd-code').textContent = code;
+  document.getElementById('hd-tag').textContent = d.type + " · Shipping Target";
+  document.getElementById('hd-note').innerHTML = d.note ? `<span class="note-flag">⚠ ${d.note}</span>` : "";
+
+  const grid = document.getElementById('gauge-grid');
+  grid.innerHTML = "";
+
+  ORDER.forEach(key=>{
+    const p = d.params[key];
+    if(!p) return;
+    const dec = decimalsFor(key);
+    const card = document.createElement('div');
+    card.className='card';
+
+    const sdVal = d.sd && d.sd[key]!==undefined ? `± ${fmt(d.sd[key], key==="P"?3:2)} (3σ)` : "";
+
+    if(p.lower!==undefined || p.upper!==undefined){
+      // gauge with a spec band
+      const lo = p.lower!==undefined ? p.lower : 0;
+      const hi = p.upper;
+      const pad = Math.max((hi-lo)*0.28, hi*0.06);
+      const domainMin = Math.max(0, lo - pad);
+      const domainMax = hi + pad;
+      const span = domainMax - domainMin;
+      const pct = v => ((v - domainMin)/span)*100;
+
+      const loPct = pct(lo);
+      const hiPct = pct(hi);
+      const tgtPct = pct(p.target);
+
+      card.innerHTML = `
+        <div class="card-top">
+          <div>
+            <div class="param-name">${LABELS[key]}</div>
+            <div class="param-unit">${p.unit}</div>
+          </div>
+          <div>
+            <div class="target-val">${fmt(p.target,dec)}</div>
+            ${sdVal ? `<div class="sd-val">${sdVal}</div>` : ""}
+          </div>
+        </div>
+        <div class="gauge">
+          <div class="gauge-track"></div>
+          <div class="gauge-band" style="left:${loPct}%; width:${hiPct-loPct}%;"></div>
+          <div class="gauge-target" style="left:${tgtPct}%;"></div>
+          <div class="gauge-tick lo" style="left:${loPct}%;">${p.lower!==undefined?fmt(lo,dec):"0"}</div>
+          <div class="gauge-tick hi" style="left:${hiPct}%;">${fmt(hi,dec)}</div>
+        </div>
+      `;
+    } else {
+      card.innerHTML = `
+        <div class="card-top">
+          <div>
+            <div class="param-name">${LABELS[key]}</div>
+            <div class="param-unit">${p.unit}</div>
+          </div>
+          <div>
+            <div class="target-val">${fmt(p.target,dec)}</div>
+          </div>
+        </div>
+        <div class="flat-val"><span>NO SPEC LIMIT — TARGET ONLY</span></div>
+      `;
+    }
+    grid.appendChild(card);
+  });
+}
+
+render("YNDF");
+</script>
+</body>
+</html>
