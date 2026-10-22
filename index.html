@@ -3,277 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shipping Product Quality Targets · FY27</title>
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADg0lEQVRYhcWWO2wcVRSGv3NnZtf2+hXiR5EUtiCKEwFCorIrRIEERAiKlERKR+WeAoHokVLQ4AhFCkqRghpFFBRBEBQpJlBgByIekTcEG/mx9qx35t5zKMaOX7sKkbzef3SlGd2Ze77zuPeMsEu1q1MjqkwDbwp2CqTC4WgV+MVErvWv9l+W6a8a2xOyfbNyZfK8wOdA3yEZbaU5gXf6L34/9xhg5crkecyu7wZqs/4VscmBiz/8KrWrUyM+D7/Rfs/366fBB90vx3nmpztgHODFlRP1d2PUznXAOACGXYjN7NlOAQAvxWbW20GAwdisg+aBGO0sQWwtQrBYCwz3OpD2Hg1NAeYXhTvViOeOG8MVY+zYEQPM3FLMlG/vA1HCp2/p0QJU1yOW0ggz4/QQtErToQA0K8IsCBsZFK1BuT5/nNnFXiJnvD2+xJf3hwG4cPpvvrg3ipnwysll7i5WWG6UGOur894Lj/4fQDPvXj8VWEqL4nNRwnpD6YtSImf8sRZRcSlmwuw/ZUpWx0y4t+RoZDnmlcX1wOW7A3g11GA0WeXcBJTjgwCy8MnzBwiCwXd/RXzzu2N+ybHWKGDqeTH3tNqorSDAh6+VeWNi765qGoFrs8LMbQUOr/jUjI+/bjAxUmL82A7EgRqorsHMrZw8HJptQECK6P1cDYwPRDsA+yPwTLdxajDjx2p7tt5opWvProrzfa4uLCtnhwJnh9pinxO9Sp7vPMvcB2MdbQYxHe+Gu/IhUYSLYsTFSJKAi3FxCZeUkChBki4kKuFK3WgjxW8sE+o1NKtjqqBFOg0QDMwwLY71lgC7a9B8wNTAKZEqxLq1oCBqODVwDXxaK36fXYLrGUDiMqYefI6GHPMeM49pQWMItDjOYzNLRehBAHGYCJEIBpjPi4WzBhLFCILECRLHuKiMuAic4LoroAHzOU49mmeobxTfBw8hYM1ybdRjVfvTOTmDCYgBAR88rWpDXIRLykhSxpW6QBxiimqA4DFTxAwLvnBCBHMRZoKYFltwe22zR7F6f9Ml8ZmtWD1RFjwheNjcePLLBxzeq+D1jkvTcFPVHpgZRzzSzczfcCIaNjezSwbrRcyOZFiehc/Uh5rbCsXDzTT7SM0WjPZeiqV5Hi41GvltgMcdOgStbqT5++WyezVybgrhpCA9T53oJhLYVLOHFmw2C/kN9dS25/4DIDd8l3v1wm0AAAAASUVORK5CYII=">
-<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAABs0lEQVQ4jZ2Rv2qUURTEf+fu3f2WBON/MWyTkEoLBQUxhZWNRZ7BIq3voBY2voMINnZiIaYROwtTGRERRRDdSgslYdfd77v3nrHYVZuwWTIwcDgww8w5BrD3aH1D4jZwEegwGxnsLcFvHb35etv2Hl7ZcNmzA0T7oTGFazEV7hg6hJ4O5PuR4hcOJQcE69HdD+o8C1V0dwB+N8bXX2L1JHTj/A5BRaiIrQ/O3Rfi5Sf4u5uH/xIsVcZC1aI/7HBv+xjLiw1I9AcVvcUxP0Ydrvd+YjiXz2ZCmCSIKhOD86eMhWg83akZpO9on8tuvYGcGrohs7XZphv5n+D5+8Krj2mu3jXQ3w2sHTdiPWoAuLpcWLsx/0PPxEQ9gphTAYyVE21WT0cstrHYwWKFSsLHAzw1U5lQKdOxkBNEuRLmbRUgtEAtzAwEoTqCxYqQGjyN8GYEFDStDZZiyf7Zgp2TF8hD0BBCwEKLEDtYaOElIy8ggUAYuOPSt9Ck/FjyLHfkQprE9NSQRwPScJcyHuLNGE81njMqBUnkVJ60Ni91e8A7M1YCLEkEBDOY5XxJqTxo6rTzB5lFFxB4opjoAAAAAElFTkSuQmCC">
-<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
-
+<title>Shipping &amp; Stockyard Targets · FY27 · v2</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23e8871e'/%3E%3Cpath d='M10 40h44l-6 10H16z' fill='%2314171b'/%3E%3Cpath d='M18 40l7-12 7 6 6-10 8 16z' fill='%23fff3e0'/%3E%3Cpath d='M12 18a20 20 0 0 1 40 0' fill='none' stroke='%2314171b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M32 18l8-8' stroke='%2314171b' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23e8871e'/%3E%3Cpath d='M10 40h44l-6 10H16z' fill='%2314171b'/%3E%3Cpath d='M18 40l7-12 7 6 6-10 8 16z' fill='%23fff3e0'/%3E%3Cpath d='M12 18a20 20 0 0 1 40 0' fill='none' stroke='%2314171b' stroke-width='4' stroke-linecap='round'/%3E%3Cpath d='M32 18l8-8' stroke='%2314171b' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#e8871e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg: #14171b;
-    --panel: #1c2127;
-    --panel-2: #232a32;
-    --line: #2b323b;
-    --line-soft: #262c34;
-    --amber: #e8871e;
-    --amber-dim: rgba(232,135,30,0.16);
-    --rust: #b6532e;
-    --steel: #6fa2bd;
-    --text: #eeeae2;
-    --text-mid: #a9aeb6;
-    --text-dim: #6b7280;
-    --ok: #7bab6e;
+    --bg:#14171b;--panel:#1c2127;--panel-2:#232a32;--line:#2b323b;--line-soft:#262c34;
+    --amber:#e8871e;--amber-dim:rgba(232,135,30,0.16);--rust:#b6532e;--steel:#6fa2bd;
+    --text:#eeeae2;--text-mid:#a9aeb6;--text-dim:#6b7280;--ok:#7bab6e;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{
-    background:
-      radial-gradient(1200px 500px at 15% -10%, rgba(232,135,30,0.06), transparent 60%),
-      var(--bg);
-    color:var(--text);
-    font-family:'Inter',sans-serif;
-    min-height:100vh;
-    padding:28px 18px 60px;
-  }
+  body{background:radial-gradient(1200px 500px at 15% -10%, rgba(232,135,30,0.06), transparent 60%),var(--bg);
+    color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;padding:28px 16px 60px;}
   .wrap{max-width:920px;margin:0 auto;}
-
-  header{margin-bottom:26px;}
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--amber);
-    margin-bottom:8px;
-    display:flex;align-items:center;gap:8px;
-  }
-  .eyebrow::before{
-    content:"";
-    width:7px;height:7px;
-    background:var(--amber);
-    display:inline-block;
-    border-radius:1px;
-    transform:rotate(45deg);
-  }
-  h1{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:clamp(24px,4vw,32px);
-    margin:0 0 8px;
-    letter-spacing:-0.01em;
-  }
-  .sub{
-    color:var(--text-mid);
-    font-size:13.5px;
-    line-height:1.5;
-  }
+  header{margin-bottom:22px;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--amber);margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .eyebrow::before{content:"";width:7px;height:7px;background:var(--amber);display:inline-block;border-radius:1px;transform:rotate(45deg);}
+  .ver{margin-left:auto;color:var(--text-dim);border:1px solid var(--line);border-radius:5px;padding:2px 7px;letter-spacing:0.06em;}
+  h1{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:clamp(24px,4vw,32px);margin:0 0 8px;letter-spacing:-0.01em;}
+  .sub{color:var(--text-mid);font-size:13.5px;line-height:1.5;}
   .sub b{color:var(--text-mid);font-weight:600;}
 
-  .selector{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:14px;
-    padding:16px;
-    margin-bottom:22px;
-  }
-  .grp-label{
-    font-family:'JetBrains Mono',monospace;
-    font-size:10.5px;
-    letter-spacing:0.12em;
-    color:var(--text-dim);
-    margin-bottom:9px;
-    text-transform:uppercase;
-  }
+  .mode{display:flex;gap:6px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:5px;margin-bottom:12px;}
+  .mode button{flex:1;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14px;background:transparent;border:0;
+    color:var(--text-mid);padding:10px 8px;border-radius:8px;cursor:pointer;transition:all .15s ease;}
+  .mode button small{display:block;font-family:'JetBrains Mono',monospace;font-weight:400;font-size:10px;color:var(--text-dim);margin-top:2px;letter-spacing:0.04em;}
+  .mode button.active{background:var(--amber);color:#14171b;}
+  .mode button.active small{color:rgba(20,23,27,0.75);}
+
+  .selector{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:22px;}
+  .grp-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:0.12em;color:var(--text-dim);margin-bottom:9px;text-transform:uppercase;}
   .chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
   .chip-row:last-child{margin-bottom:0;}
-  .chip{
-    font-family:'JetBrains Mono',monospace;
-    font-weight:600;
-    font-size:13px;
-    letter-spacing:0.02em;
-    background:var(--panel-2);
-    border:1px solid var(--line);
-    color:var(--text-mid);
-    padding:9px 15px;
-    border-radius:9px;
-    cursor:pointer;
-    transition:all .15s ease;
-  }
+  .chip{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:13px;letter-spacing:0.02em;background:var(--panel-2);
+    border:1px solid var(--line);color:var(--text-mid);padding:9px 15px;border-radius:9px;cursor:pointer;transition:all .15s ease;position:relative;}
   .chip:hover{border-color:#3a424c;color:var(--text);}
-  .chip.active{
-    background:var(--amber-dim);
-    border-color:var(--amber);
-    color:var(--amber);
-  }
+  .chip.active{background:var(--amber-dim);border-color:var(--amber);color:var(--amber);}
+  .chip .new{position:absolute;top:-6px;right:-6px;font-size:8.5px;background:var(--steel);color:#14171b;border-radius:4px;padding:1px 4px;letter-spacing:0.04em;}
 
-  .readout-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-bottom:16px;
-    padding-bottom:14px;
-    border-bottom:1px solid var(--line);
-  }
-  .product-code{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:700;
-    font-size:26px;
-    color:var(--text);
-  }
-  .product-tag{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    color:var(--steel);
-    background:rgba(111,162,189,0.12);
-    border:1px solid rgba(111,162,189,0.3);
-    padding:3px 9px;
-    border-radius:6px;
-    margin-left:10px;
-    letter-spacing:0.04em;
-  }
-  .note-flag{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11.5px;
-    color:var(--rust);
-    background:rgba(182,83,46,0.12);
-    border:1px solid rgba(182,83,46,0.35);
-    padding:5px 10px;
-    border-radius:7px;
-  }
+  .readout-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:16px;padding-bottom:14px;border-bottom:1px solid var(--line);}
+  .product-code{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:26px;color:var(--text);}
+  .product-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--steel);background:rgba(111,162,189,0.12);
+    border:1px solid rgba(111,162,189,0.3);padding:3px 9px;border-radius:6px;margin-left:10px;letter-spacing:0.04em;}
+  .note-flag{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--rust);background:rgba(182,83,46,0.12);
+    border:1px solid rgba(182,83,46,0.35);padding:5px 10px;border-radius:7px;}
 
-  .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:12px;
-  }
-
-  .card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-radius:12px;
-    padding:16px 16px 14px;
-  }
-  .card-top{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    margin-bottom:14px;
-  }
-  .param-name{
-    font-family:'Space Grotesk',sans-serif;
-    font-weight:600;
-    font-size:14.5px;
-    color:var(--text);
-  }
-  .param-unit{
-    font-family:'JetBrains Mono',monospace;
-    font-size:10px;
-    color:var(--text-dim);
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-  }
-  .target-val{
-    font-family:'JetBrains Mono',monospace;
-    font-weight:700;
-    font-size:20px;
-    color:var(--amber);
-    text-align:right;
-  }
-  .sd-val{
-    font-family:'JetBrains Mono',monospace;
-    font-size:10px;
-    color:var(--text-dim);
-    text-align:right;
-    margin-top:2px;
-  }
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px;}
+  .card.changed{border-color:rgba(111,162,189,0.45);}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;}
+  .param-name{font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:14.5px;color:var(--text);}
+  .param-unit{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:0.06em;}
+  .target-val{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;color:var(--amber);text-align:right;}
+  .sd-val,.cmp-val{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-dim);text-align:right;margin-top:2px;}
+  .cmp-val{color:var(--steel);}
 
   .gauge{position:relative;height:34px;margin-top:6px;}
-  .gauge-track{
-    position:absolute;
-    top:14px;left:0;right:0;height:5px;
-    background:var(--line-soft);
-    border-radius:3px;
-  }
-  .gauge-band{
-    position:absolute;
-    top:14px;height:5px;
-    background:linear-gradient(90deg, rgba(123,171,110,0.55), rgba(123,171,110,0.55));
-    border-radius:3px;
-  }
-  .gauge-target{
-    position:absolute;
-    top:8px;width:2px;height:17px;
-    background:var(--amber);
-    box-shadow:0 0 8px rgba(232,135,30,0.6);
-  }
-  .gauge-target::after{
-    content:"";
-    position:absolute;
-    top:-4px;left:50%;
-    transform:translateX(-50%);
-    width:0;height:0;
-    border-left:4px solid transparent;
-    border-right:4px solid transparent;
-    border-top:5px solid var(--amber);
-  }
-  .gauge-tick{
-    position:absolute;
-    top:22px;
-    transform:translateX(-50%);
-    font-family:'JetBrains Mono',monospace;
-    font-size:10px;
-    color:var(--text-dim);
-    white-space:nowrap;
-  }
-  .gauge-tick.lo{color:var(--text-mid);}
-  .gauge-tick.hi{color:var(--text-mid);}
+  .gauge-track{position:absolute;top:14px;left:0;right:0;height:5px;background:var(--line-soft);border-radius:3px;}
+  .gauge-band{position:absolute;top:14px;height:5px;background:rgba(123,171,110,0.55);border-radius:3px;}
+  .gauge-target{position:absolute;top:8px;width:2px;height:17px;background:var(--amber);box-shadow:0 0 8px rgba(232,135,30,0.6);}
+  .gauge-target::after{content:"";position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;
+    border-left:4px solid transparent;border-right:4px solid transparent;border-top:5px solid var(--amber);}
+  .gauge-tick{position:absolute;top:22px;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--text-mid);white-space:nowrap;}
 
-  .flat-val{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    background:var(--panel-2);
-    border:1px dashed var(--line);
-    border-radius:8px;
-    padding:9px 12px;
-    margin-top:6px;
-  }
-  .flat-val span{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    color:var(--text-dim);
-  }
+  .flat-val{display:flex;align-items:center;justify-content:space-between;background:var(--panel-2);border:1px dashed var(--line);border-radius:8px;padding:9px 12px;margin-top:6px;}
+  .flat-val span{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);}
 
-  footer{
-    margin-top:24px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    color:var(--text-dim);
-    text-align:center;
-    line-height:1.6;
-  }
-
-  @media (max-width:480px){
-    .grid{grid-template-columns:1fr;}
-  }
+  footer{margin-top:24px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--text-dim);text-align:center;line-height:1.6;}
+  @media (max-width:480px){.grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">BHP · Shipping Product Quality</div>
-    <h1>Shipping Target Lookup</h1>
-    <div class="sub">
-      Iron Ore Product Quality Targets &amp; Internal Non-Conformance Limits — <b>FY27</b>,
-      effective 01/07/2026 to 30/06/2027. Select a product to view its spec band:
-      lower limit, shipping target, and upper limit for each parameter.
-      <b>LOI</b> is published as a target only (no spec limit); <b>H2O</b> carries the limit band.
-    </div>
+    <div class="eyebrow">BHP · Iron Ore Product Quality <span class="ver">v2</span></div>
+    <h1 id="title">Shipping Target Lookup</h1>
+    <div class="sub" id="sub"></div>
   </header>
+
+  <div class="mode" id="mode">
+    <button data-mode="shipping">Shipping<small>eff. 20/08/2026</small></button>
+    <button data-mode="stockyard">Mine Stockyard<small>eff. 21/10/2026</small></button>
+  </div>
 
   <div class="selector">
     <div class="grp-label">Fines</div>
@@ -283,222 +99,101 @@
   </div>
 
   <div class="readout-head">
-    <div>
-      <span class="product-code" id="hd-code"></span>
-      <span class="product-tag" id="hd-tag"></span>
-    </div>
+    <div><span class="product-code" id="hd-code"></span><span class="product-tag" id="hd-tag"></span></div>
     <div id="hd-note"></div>
   </div>
 
   <div class="grid" id="gauge-grid"></div>
 
-  <footer>
-    Values as published 01/07/2026 · Queries → Product Quality team
-  </footer>
+  <footer id="foot"></footer>
 </div>
 
 <script>
-const DATA = {
-  YNDF: { type:"Fines",
-    params:{
-      FE:{lower:55.75,target:56.50,upper:57.25,unit:"%"},
-      P:{lower:0.049,target:0.055,upper:0.061,unit:"%"},
-      SIO2:{lower:5.70,target:6.30,upper:6.90,unit:"%"},
-      AL2O3:{lower:1.65,target:1.95,upper:2.25,unit:"%"},
-      LOI:{target:10.70,unit:"%"},
-      H2O:{lower:8.40,target:10.50,upper:11.55,unit:"%"},
-      UNDERSIZE:{upper:10.00,target:8.00,unit:"%"},
-      OVERSIZE:{upper:16.00,target:12.00,unit:"%"}
-    },
-    sd:{FE:0.25,P:0.002,SIO2:0.20,AL2O3:0.10,LOI:0.35}
-  },
-  JMBF: { type:"Fines",
-    params:{
-      FE:{lower:59.28,target:60.30,upper:61.32,unit:"%"},
-      P:{lower:0.101,target:0.125,upper:0.149,unit:"%"},
-      SIO2:{lower:4.15,target:4.90,upper:5.65,unit:"%"},
-      AL2O3:{lower:3.05,target:3.50,upper:3.95,unit:"%"},
-      LOI:{target:4.90,unit:"%"},
-      H2O:{lower:5.70,target:7.80,upper:8.85,unit:"%"},
-      UNDERSIZE:{upper:30.00,target:28.00,unit:"%"},
-      OVERSIZE:{upper:16.00,target:12.00,unit:"%"}
-    },
-    sd:{FE:0.34,P:0.008,SIO2:0.25,AL2O3:0.15,LOI:0.35}
-  },
-  MACF: { type:"Fines", note:"Market constraint: min Fe 60%",
-    params:{
-      FE:{lower:60.00,target:60.50,upper:61.28,unit:"%"},
-      P:{lower:0.065,target:0.080,upper:0.095,unit:"%"},
-      SIO2:{lower:4.10,target:4.85,upper:5.60,unit:"%"},
-      AL2O3:{lower:2.15,target:2.45,upper:2.75,unit:"%"},
-      LOI:{target:5.95,unit:"%"},
-      H2O:{lower:6.65,target:8.75,upper:9.80,unit:"%"},
-      UNDERSIZE:{upper:28.00,target:26.00,unit:"%"},
-      OVERSIZE:{upper:18.00,target:13.00,unit:"%"}
-    },
-    sd:{FE:0.26,P:0.005,SIO2:0.25,AL2O3:0.10,LOI:0.35}
-  },
-  NHGF: { type:"Fines",
-    params:{
-      FE:{lower:59.71,target:60.70,upper:61.69,unit:"%"},
-      P:{lower:0.089,target:0.110,upper:0.131,unit:"%"},
-      SIO2:{lower:4.25,target:5.00,upper:5.75,unit:"%"},
-      AL2O3:{lower:2.50,target:2.80,upper:3.10,unit:"%"},
-      LOI:{target:4.70,unit:"%"},
-      H2O:{lower:6.70,target:8.80,upper:9.85,unit:"%"},
-      UNDERSIZE:{upper:30.00,target:27.00,unit:"%"},
-      OVERSIZE:{upper:18.00,target:14.00,unit:"%"}
-    },
-    sd:{FE:0.33,P:0.007,SIO2:0.25,AL2O3:0.10,LOI:0.35}
-  },
-  YLGF: { type:"Fines",
-    params:{
-      FE:{lower:53.95,target:55.00,upper:56.05,unit:"%"},
-      P:{lower:0.043,target:0.055,upper:0.067,unit:"%"},
-      SIO2:{lower:7.50,target:8.25,upper:9.00,unit:"%"},
-      AL2O3:{lower:2.35,target:2.80,upper:3.25,unit:"%"},
-      LOI:{target:10.00,unit:"%"},
-      H2O:{lower:7.40,target:9.50,upper:10.55,unit:"%"},
-      UNDERSIZE:{upper:10.00,target:8.00,unit:"%"},
-      OVERSIZE:{upper:16.00,target:12.00,unit:"%"}
-    }
-  },
-  JIMF: { type:"Fines",
-    params:{
-      FE:{lower:58.00,target:59.05,upper:60.10,unit:"%"},
-      P:{lower:0.089,target:0.110,upper:0.131,unit:"%"},
-      SIO2:{lower:5.05,target:5.80,upper:6.55,unit:"%"},
-      AL2O3:{lower:2.15,target:3.05,upper:3.95,unit:"%"},
-      LOI:{target:6.20,unit:"%"},
-      H2O:{lower:6.65,target:8.75,upper:9.80,unit:"%"},
-      UNDERSIZE:{upper:30.00,target:28.00,unit:"%"},
-      OVERSIZE:{upper:18.00,target:14.00,unit:"%"}
-    }
-  },
-  NBLL: { type:"Lump",
-    params:{
-      FE:{lower:60.96,target:61.95,upper:62.94,unit:"%"},
-      P:{lower:0.075,target:0.090,upper:0.105,unit:"%"},
-      SIO2:{lower:3.45,target:4.20,upper:4.95,unit:"%"},
-      AL2O3:{lower:1.30,target:1.60,upper:1.90,unit:"%"},
-      LOI:{target:5.20,unit:"%"},
-      H2O:{lower:2.30,target:4.10,upper:5.00,unit:"%"},
-      UNDERSIZE:{upper:7.00,target:6.00,unit:"%"},
-      OVERSIZE:{upper:25.00,target:20.00,unit:"%"}
-    },
-    sd:{FE:0.33,P:0.005,SIO2:0.25,AL2O3:0.10,LOI:0.30}
-  },
-  NBLLU: { type:"Lump",
-    params:{
-      FE:{lower:60.60,target:61.65,upper:62.70,unit:"%"},
-      P:{lower:0.075,target:0.090,upper:0.105,unit:"%"},
-      SIO2:{lower:3.55,target:4.30,upper:5.05,unit:"%"},
-      AL2O3:{lower:1.55,target:1.85,upper:2.15,unit:"%"},
-      LOI:{target:5.30,unit:"%"},
-      H2O:{lower:2.50,target:4.30,upper:5.20,unit:"%"},
-      UNDERSIZE:{upper:25.00,target:15.00,unit:"%"},
-      OVERSIZE:{upper:25.00,target:20.00,unit:"%"}
-    },
-    sd:{FE:0.33,P:0.005,SIO2:0.25,AL2O3:0.10,LOI:0.30}
-  }
+const DATA = {"shipping":{"YNDF":{"type":"Fines","params":{"FE":{"lower":55.75,"target":56.5,"upper":57.25},"P":{"lower":0.049,"target":0.055,"upper":0.061},"SIO2":{"lower":5.7,"target":6.3,"upper":6.9},"AL2O3":{"lower":1.65,"target":1.95,"upper":2.25},"LOI":{"target":10.7},"H2O":{"lower":8.4,"target":10.5,"upper":11.55},"UNDERSIZE":{"upper":10.0,"target":8.0},"OVERSIZE":{"upper":16.0,"target":12.0}},"sd":{"FE":0.25,"P":0.002,"SIO2":0.2,"AL2O3":0.1,"H2O":0.35}},"JMBF":{"type":"Fines","params":{"FE":{"lower":59.28,"target":60.3,"upper":61.32},"P":{"lower":0.101,"target":0.125,"upper":0.149},"SIO2":{"lower":4.15,"target":4.9,"upper":5.65},"AL2O3":{"lower":3.05,"target":3.5,"upper":3.95},"LOI":{"target":4.9},"H2O":{"lower":5.7,"target":7.8,"upper":8.85},"UNDERSIZE":{"upper":30.0,"target":28.0},"OVERSIZE":{"upper":16.0,"target":12.0}},"sd":{"FE":0.34,"P":0.008,"SIO2":0.25,"AL2O3":0.15,"H2O":0.35}},"MACF":{"type":"Fines","params":{"FE":{"lower":60.0,"target":60.5,"upper":61.28},"P":{"lower":0.065,"target":0.08,"upper":0.095},"SIO2":{"lower":4.1,"target":4.85,"upper":5.6},"AL2O3":{"lower":2.15,"target":2.45,"upper":2.75},"LOI":{"target":5.95},"H2O":{"lower":6.65,"target":8.75,"upper":9.8},"UNDERSIZE":{"upper":28.0,"target":26.0},"OVERSIZE":{"upper":18.0,"target":13.0}},"sd":{"FE":0.26,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.35},"note":"Market constraint: min Fe 60%"},"NHGF":{"type":"Fines","params":{"FE":{"lower":59.71,"target":60.7,"upper":61.69},"P":{"lower":0.089,"target":0.11,"upper":0.131},"SIO2":{"lower":4.25,"target":5.0,"upper":5.75},"AL2O3":{"lower":2.5,"target":2.8,"upper":3.1},"LOI":{"target":4.7},"H2O":{"lower":6.7,"target":8.8,"upper":9.85},"UNDERSIZE":{"upper":30.0,"target":27.0},"OVERSIZE":{"upper":18.0,"target":14.0}},"sd":{"FE":0.33,"P":0.007,"SIO2":0.25,"AL2O3":0.1,"H2O":0.35}},"YLGF":{"type":"Fines","params":{"FE":{"lower":53.95,"target":55.0,"upper":56.05},"P":{"lower":0.043,"target":0.055,"upper":0.067},"SIO2":{"lower":7.5,"target":8.25,"upper":9.0},"AL2O3":{"lower":2.35,"target":2.8,"upper":3.25},"LOI":{"target":10.0},"H2O":{"lower":7.4,"target":9.5,"upper":10.55},"UNDERSIZE":{"upper":10.0,"target":8.0},"OVERSIZE":{"upper":16.0,"target":12.0}}},"JIMF":{"type":"Fines","params":{"FE":{"lower":58.0,"target":59.05,"upper":60.1},"P":{"lower":0.089,"target":0.11,"upper":0.131},"SIO2":{"lower":5.05,"target":5.8,"upper":6.55},"AL2O3":{"lower":2.15,"target":3.05,"upper":3.95},"LOI":{"target":6.2},"H2O":{"lower":6.65,"target":8.75,"upper":9.8},"UNDERSIZE":{"upper":30.0,"target":28.0},"OVERSIZE":{"upper":18.0,"target":14.0}}},"NBLL":{"type":"Lump","params":{"FE":{"lower":60.96,"target":61.95,"upper":62.94},"P":{"lower":0.075,"target":0.09,"upper":0.105},"SIO2":{"lower":3.45,"target":4.2,"upper":4.95},"AL2O3":{"lower":1.3,"target":1.6,"upper":1.9},"LOI":{"target":5.2},"H2O":{"lower":2.3,"target":4.1,"upper":5.0},"UNDERSIZE":{"upper":7.0,"target":6.0},"OVERSIZE":{"upper":25.0,"target":20.0}},"sd":{"FE":0.33,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.3}},"NBLLU":{"type":"Lump","params":{"FE":{"lower":60.6,"target":61.65,"upper":62.7},"P":{"lower":0.075,"target":0.09,"upper":0.105},"SIO2":{"lower":3.55,"target":4.3,"upper":5.05},"AL2O3":{"lower":1.55,"target":1.85,"upper":2.15},"LOI":{"target":5.3},"H2O":{"lower":2.5,"target":4.3,"upper":5.2},"UNDERSIZE":{"upper":25.0,"target":15.0},"OVERSIZE":{"upper":25.0,"target":20.0}},"sd":{"FE":0.33,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.3}}},"stockyard":{"YNDF":{"type":"Fines","params":{"FE":{"lower":55.45,"target":56.2,"upper":56.95},"P":{"lower":0.049,"target":0.055,"upper":0.061},"SIO2":{"lower":5.8,"target":6.4,"upper":7.0},"AL2O3":{"lower":1.65,"target":1.95,"upper":2.25},"LOI":{"target":10.7},"H2O":{"lower":7.9,"target":10.0,"upper":11.05},"UNDERSIZE":{"upper":10.0,"target":8.0},"OVERSIZE":{"upper":16.0,"target":12.0}},"sd":{"FE":0.25,"P":0.002,"SIO2":0.2,"AL2O3":0.1,"H2O":0.35}},"MACF":{"type":"Fines","params":{"FE":{"lower":60.0,"target":60.35,"upper":61.13},"P":{"lower":0.063,"target":0.078,"upper":0.093},"SIO2":{"lower":4.1,"target":4.85,"upper":5.6},"AL2O3":{"lower":2.1,"target":2.4,"upper":2.7},"LOI":{"target":5.95},"H2O":{"lower":6.65,"target":8.75,"upper":9.8},"UNDERSIZE":{"upper":28.0,"target":26.0},"OVERSIZE":{"upper":18.0,"target":13.0}},"sd":{"FE":0.26,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.35},"note":"Market constraint: min Fe 60%"},"JMBF":{"type":"Fines","params":{"FE":{"lower":59.28,"target":60.3,"upper":61.32},"P":{"lower":0.101,"target":0.125,"upper":0.149},"SIO2":{"lower":4.1,"target":4.85,"upper":5.6},"AL2O3":{"lower":3.1,"target":3.55,"upper":4.0},"LOI":{"target":4.9},"H2O":{"lower":5.7,"target":7.8,"upper":8.85},"UNDERSIZE":{"upper":30.0,"target":28.0},"OVERSIZE":{"upper":16.0,"target":12.0}},"sd":{"FE":0.34,"P":0.008,"SIO2":0.25,"AL2O3":0.15,"H2O":0.35}},"NJVF":{"type":"Fines","params":{"FE":{"lower":59.56,"target":60.55,"upper":61.54},"P":{"lower":0.089,"target":0.11,"upper":0.131},"SIO2":{"lower":4.3,"target":5.05,"upper":5.8},"AL2O3":{"lower":2.5,"target":2.8,"upper":3.1},"LOI":{"target":4.7},"H2O":{"lower":6.7,"target":8.8,"upper":9.85},"UNDERSIZE":{"upper":28.0,"target":25.0},"OVERSIZE":{"upper":16.0,"target":12.0}}},"MLGF":{"type":"Fines","params":{"FE":{"lower":57.3,"target":58.35,"upper":59.4},"P":{"lower":0.093,"target":0.108,"upper":0.123},"SIO2":{"lower":5.75,"target":6.5,"upper":7.25},"AL2O3":{"lower":2.5,"target":2.95,"upper":3.4},"LOI":{"target":5.85},"H2O":{"lower":6.65,"target":8.75,"upper":9.8},"UNDERSIZE":{"upper":28.0,"target":26.0},"OVERSIZE":{"upper":18.0,"target":13.0}},"sd":{"FE":0.35,"P":0.005,"SIO2":0.25,"AL2O3":0.15,"H2O":0.35}},"YLGF":{"type":"Fines","params":{"FE":{"lower":53.65,"target":54.7,"upper":55.75},"P":{"lower":0.043,"target":0.055,"upper":0.067},"SIO2":{"lower":7.6,"target":8.35,"upper":9.1},"AL2O3":{"lower":2.35,"target":2.8,"upper":3.25},"LOI":{"target":10.0},"H2O":{"lower":6.9,"target":9.0,"upper":10.05},"UNDERSIZE":{"upper":10.0,"target":8.0},"OVERSIZE":{"upper":16.0,"target":12.0}}},"JMBL":{"type":"Lump","params":{"FE":{"lower":60.95,"target":62.0,"upper":63.05},"P":{"lower":0.095,"target":0.11,"upper":0.125},"SIO2":{"lower":2.85,"target":3.6,"upper":4.35},"AL2O3":{"lower":2.0,"target":2.3,"upper":2.6},"LOI":{"target":5.0},"H2O":{"lower":2.3,"target":4.1,"upper":5.0},"UNDERSIZE":{"upper":7.0,"target":6.0},"OVERSIZE":{"upper":25.0,"target":20.0}},"sd":{"FE":0.35,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.3}},"MACL":{"type":"Lump","params":{"FE":{"lower":60.25,"target":61.3,"upper":62.35},"P":{"lower":0.09,"target":0.105,"upper":0.12},"SIO2":{"lower":3.55,"target":4.3,"upper":5.05},"AL2O3":{"lower":1.2,"target":1.5,"upper":1.8},"LOI":{"target":6.2},"H2O":{"lower":2.3,"target":4.1,"upper":5.0},"UNDERSIZE":{"upper":7.0,"target":6.0},"OVERSIZE":{"upper":25.0,"target":20.0}},"sd":{"FE":0.35,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.3}},"NJVL":{"type":"Lump","params":{"FE":{"lower":60.88,"target":61.93,"upper":62.98},"P":{"lower":0.071,"target":0.086,"upper":0.101},"SIO2":{"lower":4.38,"target":5.13,"upper":5.88},"AL2O3":{"lower":1.27,"target":1.57,"upper":1.87},"LOI":{"target":3.7},"H2O":{"lower":2.3,"target":4.1,"upper":5.0},"UNDERSIZE":{"upper":7.0,"target":6.0},"OVERSIZE":{"upper":25.0,"target":20.0}},"sd":{"FE":0.35,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.3}},"SFKL":{"type":"Lump","params":{"FE":{"lower":60.45,"target":61.5,"upper":62.55},"P":{"lower":0.035,"target":0.05,"upper":0.065},"SIO2":{"lower":3.05,"target":3.8,"upper":4.55},"AL2O3":{"lower":1.0,"target":1.3,"upper":1.6},"LOI":{"target":5.7},"H2O":{"lower":2.3,"target":4.1,"upper":5.0},"UNDERSIZE":{"upper":7.0,"target":6.0},"OVERSIZE":{"upper":25.0,"target":20.0}},"sd":{"FE":0.35,"P":0.005,"SIO2":0.25,"AL2O3":0.1,"H2O":0.3}}}};
+const META = {
+  shipping:{title:"Shipping Target Lookup",label:"Shipping Target",eff:"20/08/2026 to 30/06/2027"},
+  stockyard:{title:"Mine Stockyard Target Lookup",label:"Stockyard Target",eff:"21/10/2026 to 30/06/2027"}
 };
-
+const VERSION = "v2";
 const LABELS = {FE:"Fe",P:"P",SIO2:"SiO₂",AL2O3:"Al₂O₃",LOI:"LOI",H2O:"H₂O",UNDERSIZE:"Undersize",OVERSIZE:"Oversize"};
 const ORDER = ["FE","P","SIO2","AL2O3","LOI","H2O","UNDERSIZE","OVERSIZE"];
+let mode = "shipping", current = "YNDF";
 
-const finesRow = document.getElementById('fines-row');
-const lumpRow = document.getElementById('lump-row');
+function fmt(v,dec){ return (v===undefined||v===null) ? "—" : v.toFixed(dec); }
+const decFor = k => k==="P" ? 3 : 2;
+const same = (a,b) => a && b && a.lower===b.lower && a.target===b.target && a.upper===b.upper;
 
-Object.keys(DATA).forEach(code=>{
-  const chip = document.createElement('div');
-  chip.className='chip';
-  chip.textContent=code;
-  chip.dataset.code=code;
-  chip.addEventListener('click',()=>render(code));
-  (DATA[code].type==="Fines"?finesRow:lumpRow).appendChild(chip);
-});
-
-function fmt(v, decimals){
-  if(v===undefined||v===null) return "—";
-  return v.toFixed(decimals);
+function buildChips(){
+  const f=document.getElementById('fines-row'), l=document.getElementById('lump-row');
+  f.innerHTML=""; l.innerHTML="";
+  Object.keys(DATA[mode]).forEach(code=>{
+    const chip=document.createElement('div');
+    chip.className='chip'; chip.dataset.code=code; chip.textContent=code;
+    if(mode==="stockyard" && !DATA.shipping[code]){
+      const t=document.createElement('span'); t.className='new'; t.textContent='SY'; t.title='Stockyard-only product'; chip.appendChild(t);
+    }
+    chip.addEventListener('click',()=>render(code));
+    (DATA[mode][code].type==="Fines"?f:l).appendChild(chip);
+  });
 }
-function decimalsFor(key){
-  if(key==="P") return 3;
-  return 2;
+
+function setMode(m){
+  mode=m;
+  document.querySelectorAll('#mode button').forEach(b=>b.classList.toggle('active',b.dataset.mode===m));
+  const M=META[m];
+  document.getElementById('title').textContent=M.title;
+  document.title=M.title.replace(" Lookup","s")+" · FY27 · "+VERSION;
+  document.getElementById('sub').innerHTML=
+    `Iron Ore Product Quality Targets &amp; Internal Non-Conformance Limits — <b>FY27</b>, effective ${M.eff}. `+
+    `Select a product to view lower limit, ${M.label.toLowerCase()} and upper limit for each parameter. `+
+    `<b>LOI</b> is published as a target only; <b>H₂O</b> carries the limit band.`+
+    (m==="stockyard" ? ` Cards outlined in blue differ from the shipping target.` : ``);
+  document.getElementById('foot').innerHTML=
+    `${VERSION} · Source: FY27 Annual Shipping and Mine Stockyard Targets_v2.pdf · ${M.label}s effective ${M.eff.split(" ")[0]}<br>Queries → Product Quality team`;
+  buildChips();
+  render(DATA[m][current] ? current : Object.keys(DATA[m])[0]);
 }
 
 function render(code){
-  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active', c.dataset.code===code));
+  current=code;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('active',c.dataset.code===code));
+  const d=DATA[mode][code], ship=(mode==="stockyard")?DATA.shipping[code]:null;
+  document.getElementById('hd-code').textContent=code;
+  document.getElementById('hd-tag').textContent=d.type+" · "+META[mode].label;
+  let note=d.note?`<span class="note-flag">⚠ ${d.note}</span>`:"";
+  if(mode==="stockyard" && !ship) note+=` <span class="note-flag" style="color:var(--steel);border-color:rgba(111,162,189,0.4);background:rgba(111,162,189,0.1)">Stockyard only</span>`;
+  document.getElementById('hd-note').innerHTML=note;
 
-  const d = DATA[code];
-  document.getElementById('hd-code').textContent = code;
-  document.getElementById('hd-tag').textContent = d.type + " · Shipping Target";
-  document.getElementById('hd-note').innerHTML = d.note ? `<span class="note-flag">⚠ ${d.note}</span>` : "";
-
-  const grid = document.getElementById('gauge-grid');
-  grid.innerHTML = "";
-
+  const grid=document.getElementById('gauge-grid'); grid.innerHTML="";
   ORDER.forEach(key=>{
-    const p = d.params[key];
-    if(!p) return;
-    const dec = decimalsFor(key);
-    const card = document.createElement('div');
-    card.className='card';
-
-    const sdVal = d.sd && d.sd[key]!==undefined ? `± ${fmt(d.sd[key], key==="P"?3:2)} (3σ)` : "";
-
-    if(p.lower!==undefined || p.upper!==undefined){
-      // gauge with a spec band
-      const lo = p.lower!==undefined ? p.lower : 0;
-      const hi = p.upper;
-      const pad = Math.max((hi-lo)*0.28, hi*0.06);
-      const domainMin = Math.max(0, lo - pad);
-      const domainMax = hi + pad;
-      const span = domainMax - domainMin;
-      const pct = v => ((v - domainMin)/span)*100;
-
-      const loPct = pct(lo);
-      const hiPct = pct(hi);
-      const tgtPct = pct(p.target);
-
-      card.innerHTML = `
-        <div class="card-top">
-          <div>
-            <div class="param-name">${LABELS[key]}</div>
-            <div class="param-unit">${p.unit}</div>
-          </div>
-          <div>
-            <div class="target-val">${fmt(p.target,dec)}</div>
-            ${sdVal ? `<div class="sd-val">${sdVal}</div>` : ""}
-          </div>
-        </div>
-        <div class="gauge">
-          <div class="gauge-track"></div>
-          <div class="gauge-band" style="left:${loPct}%; width:${hiPct-loPct}%;"></div>
-          <div class="gauge-target" style="left:${tgtPct}%;"></div>
-          <div class="gauge-tick lo" style="left:${loPct}%;">${p.lower!==undefined?fmt(lo,dec):"0"}</div>
-          <div class="gauge-tick hi" style="left:${hiPct}%;">${fmt(hi,dec)}</div>
-        </div>
-      `;
+    const p=d.params[key]; if(!p) return;
+    const dec=decFor(key), card=document.createElement('div'); card.className='card';
+    const sd=d.sd && d.sd[key]!==undefined ? `<div class="sd-val">± ${fmt(d.sd[key],dec)} (3SD)</div>` : "";
+    let cmp="";
+    if(ship && ship.params[key] && !same(ship.params[key],p)){
+      card.classList.add('changed');
+      cmp=`<div class="cmp-val">Ship ${fmt(ship.params[key].target,dec)}</div>`;
+    }
+    const top=`<div class="card-top"><div><div class="param-name">${LABELS[key]}</div><div class="param-unit">%</div></div>
+      <div><div class="target-val">${fmt(p.target,dec)}</div>${sd}${cmp}</div></div>`;
+    if(p.upper!==undefined){
+      const lo=p.lower!==undefined?p.lower:0, hi=p.upper;
+      const pad=Math.max((hi-lo)*0.28,hi*0.06), min=Math.max(0,lo-pad), span=hi+pad-min;
+      const pct=v=>((v-min)/span)*100;
+      card.innerHTML=top+`<div class="gauge"><div class="gauge-track"></div>
+        <div class="gauge-band" style="left:${pct(lo)}%;width:${pct(hi)-pct(lo)}%"></div>
+        <div class="gauge-target" style="left:${pct(p.target)}%"></div>
+        <div class="gauge-tick" style="left:${pct(lo)}%">${p.lower!==undefined?fmt(lo,dec):"0"}</div>
+        <div class="gauge-tick" style="left:${pct(hi)}%">${fmt(hi,dec)}</div></div>`;
     } else {
-      card.innerHTML = `
-        <div class="card-top">
-          <div>
-            <div class="param-name">${LABELS[key]}</div>
-            <div class="param-unit">${p.unit}</div>
-          </div>
-          <div>
-            <div class="target-val">${fmt(p.target,dec)}</div>
-          </div>
-        </div>
-        <div class="flat-val"><span>NO SPEC LIMIT — TARGET ONLY</span></div>
-      `;
+      card.innerHTML=top+`<div class="flat-val"><span>NO SPEC LIMIT — TARGET ONLY</span></div>`;
     }
     grid.appendChild(card);
   });
 }
 
-render("YNDF");
+document.querySelectorAll('#mode button').forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
+setMode("shipping");
 </script>
 </body>
 </html>
